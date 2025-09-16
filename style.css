@@ -1,0 +1,115 @@
+:root {
+    --key-bg: #ffffff30;
+    --key-border: #ffffff80;
+    --key-shadow: #00000040;
+    --key-pressed-bg: #ffffff80;
+    --key-glow: #ffffffcc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    background: linear-gradient(45deg, #1d2b64, #f8cdda);
+    animation: gradient-animation 15s ease infinite;
+    background-size: 400% 400%;
+    text-align: center;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#app {
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-shadow: 0 2px 10px var(--key-shadow);
+}
+
+p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.piano-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1rem;
+    background: #ffffff1a;
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--key-border);
+.keyboard-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.3rem;
+    margin-bottom: 0.2rem;
+}
+}
+
+.key {
+    background: var(--key-bg);
+    border: 1px solid var(--key-border);
+    border-radius: 0.5rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.1s ease-out;
+    box-shadow: 0 4px 6px var(--key-shadow);
+}
+
+.key:hover {
+    background: var(--key-pressed-bg);
+    box-shadow: 0 0 20px var(--key-glow);
+}
+
+.key.pressed {
+    background: var(--key-pressed-bg);
+    transform: translateY(4px);
+    box-shadow: 0 2px 4px var(--key-shadow);
+}
+
+.key-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.note-label {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+footer {
+    margin-top: 2rem;
+    opacity: 0.6;
+}
